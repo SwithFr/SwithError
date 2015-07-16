@@ -70,7 +70,7 @@ class SwithError
                 $$name = $value;
             }
         }
-        include('./errorLayout.php');
+        include( __DIR__ . '/errorLayout.php');
         exit();
     }
 } 
