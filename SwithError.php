@@ -74,5 +74,6 @@ class SwithError
             }
         }
         include( __DIR__ . '/errorLayout.php');
+        die();
     }
 } 
