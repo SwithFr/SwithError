@@ -79,9 +79,11 @@
             e.preventDefault();
 
             if ( !bShown ) {
+                backtraceLink.innerHTML = "Masquer le backtrace︎";
                 backtrace.style.display = "block"
                 bShown = true;
             } else {
+                backtraceLink.innerHTML = "Voir le backtrace complet";
                 backtrace.style.display = "none"
                 bShown = false;
             }
