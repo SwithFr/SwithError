@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title><?= $title; ?></title>
-    <?php if(!empty($customStyle)): ?>
-        <link rel="stylesheet" href="<?= $customStyle; ?>"/>
-    <?php endif; ?>
-
     <style>
         body {
             width: 50%;
@@ -16,12 +12,15 @@
             font-weight: 300;
         }
     </style>
+    <?php if(!empty($customStyle)): ?>
+        <link rel="stylesheet" href="<?= $customStyle; ?>"/>
+    <?php endif; ?>
 </head>
 <body>
-    <div class="content">
-        <h1><?= $title; ?></h1>
+    <div class="error__content">
+        <h1 class="error__title"><?= $title; ?></h1>
 
-        <p class="message <?= $messageClass; ?>"><?= $message; ?></p>
+        <p class="error__message"><?= $message; ?></p>
     </div>
 </body>
 </html>
