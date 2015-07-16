@@ -14,7 +14,7 @@ Ou avec la commande
     composer require swith/error:dev-master
     
 ###sans composer
-Importez simplement les fichier `SwithError.php` et `errorLayout.php dans votre projet.
+Importez simplement les fichier `SwithError.php` et `errorLayout.ph` dans votre projet.
 
 ##Utilisation
 Exemple d'utilisation 
