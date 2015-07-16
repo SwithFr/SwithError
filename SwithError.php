@@ -65,12 +65,14 @@ class SwithError
         $customStyle = "";
         $messageClass = "";
         $title = "Une erreur est survenue";
+        $backtrace = debug_backtrace();
+        $file = $backtrace[0]['file'];
+        $line = $backtrace[0]['line'];
         if(!empty($this->params)) {
             foreach ($this->params as $name => $value) {
                 $$name = $value;
             }
         }
         include( __DIR__ . '/errorLayout.php');
-        exit();
     }
 } 
