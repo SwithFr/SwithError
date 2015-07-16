@@ -1,0 +1,15 @@
+{
+    "name": "swith/errormanager",
+    "description": "Permet de gerer des erreurs (liees au framewirk swith/framework)",
+    "authors": [
+        {
+            "name": "SwithFr",
+            "email": "contact@swith.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4" : {
+            "SwithError\\" : "./"
+        }
+    }
+}
