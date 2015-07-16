@@ -1,5 +1,5 @@
 {
-    "name": "swith/errormanager",
+    "name": "swith/error",
     "description": "Permet de gerer des erreurs (liees au framewirk swith/framework)",
     "authors": [
         {
