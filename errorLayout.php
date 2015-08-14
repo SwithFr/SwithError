@@ -56,40 +56,42 @@
     <?php endif; ?>
 </head>
 <body>
-    <div class="error__content">
-        <h1 class="error__title"><?= $title; ?></h1>
+<div class="error__content">
+    <h1 class="error__title"><?= $title; ?></h1>
 
+    <p class="error__message"><?= $message; ?></p>
+
+    <?php if(isset($backtrace)): ?>
         <p class="error__backtrace"><?= $file; ?> <span class="error__backtrace__line">l: <?= $line; ?></span></p>
-
-        <p class="error__message"><?= $message; ?></p>
-
         <a id="backtraceLink" href="#backtrace">Voir le backtrace complet</a>
         <div id="backtrace">
             <?= var_dump($backtrace); ?>
         </div>
-    </div>
+    <?php endif; ?>
 
-    <script>
-        var bShown = false;
+</div>
 
-        var backtrace = document.querySelector( "#backtrace"),
-            backtraceLink = document.querySelector( "#backtraceLink" );
+<script>
+    var bShown = false;
 
-        function toggleBacktrace( e ) {
-            e.preventDefault();
+    var backtrace = document.querySelector( "#backtrace"),
+        backtraceLink = document.querySelector( "#backtraceLink" );
 
-            if ( !bShown ) {
-                backtraceLink.innerHTML = "Masquer le backtrace︎";
-                backtrace.style.display = "block"
-                bShown = true;
-            } else {
-                backtraceLink.innerHTML = "Voir le backtrace complet";
-                backtrace.style.display = "none"
-                bShown = false;
-            }
+    function toggleBacktrace( e ) {
+        e.preventDefault();
+
+        if ( !bShown ) {
+            backtraceLink.innerHTML = "Masquer le backtrace︎";
+            backtrace.style.display = "block"
+            bShown = true;
+        } else {
+            backtraceLink.innerHTML = "Voir le backtrace complet";
+            backtrace.style.display = "none"
+            bShown = false;
         }
+    }
 
-        backtraceLink.addEventListener( "click", toggleBacktrace, false );
-    </script>
+    backtraceLink.addEventListener( "click", toggleBacktrace, false );
+</script>
 </body>
 </html>
