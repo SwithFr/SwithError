@@ -59,15 +59,21 @@ class SwithError
         $this->headerCode = $headerCode;
     }
 
-    public function display()
+    /**
+     * Affiche l'erreur
+     * @param bool $showBacktrace
+     */
+    public function display($showBacktrace = true)
     {
         header($this->headers[$this->getHeaderCode()]);
         $customStyle = "";
         $messageClass = "";
         $title = "Une erreur est survenue";
-        $backtrace = debug_backtrace();
-        $file = $backtrace[0]['file'];
-        $line = $backtrace[0]['line'];
+        if($showBacktrace) {
+            $backtrace = debug_backtrace();
+            $file = $backtrace[0]['file'];
+            $line = $backtrace[0]['line'];
+        }
         if(!empty($this->params)) {
             foreach ($this->params as $name => $value) {
                 $$name = $value;
